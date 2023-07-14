@@ -1,15 +1,14 @@
 name: Test action with token
 
 on:
-  workflow_dispatch:
+    workflow_dispatch:
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
 
-      - uses: jaco-coetzee-dan/action@v1
-        with:
-          token: {{ $secrets.TOKEN }}
-        
+            - uses: jaco-coetzee-dan/action@v1
+              with:
+                  token: ${{ secrets.TOKEN }}
